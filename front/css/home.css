@@ -13,8 +13,8 @@ body {
 
 /* Barra de navegação */
 .navbar {
-    background-color: #32b352; /* Cor de fundo da navbar */
-    padding: 10px 20px; /* Espaçamento interno */
+    background-color: #329bb3; /* Cor de fundo da navbar */
+    padding: 10px 20px 10px 10px; /* Espaçamento interno */
     border-bottom: 1px solid #ddd; /* Linha abaixo da navbar */
     height: 80px;
 }

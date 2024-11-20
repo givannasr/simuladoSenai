@@ -10,10 +10,10 @@ function carregarPagina(pagina) {
         })
         .then(html =>{
             conteudoPrincipal.innerHTML = html;
-            const scriptNovo = createElement('script');
+            const scriptNovo = document.createElement('script');
             scriptNovo.src = `../javascript/${script}`;
             document.body.appendChild(scriptNovo);
         });
 }
 
-localStorage.setItem("ipApi","http://10.0.3.10:3000/");
+localStorage.setItem("ipApi","http://10.0.3.124:3000/");

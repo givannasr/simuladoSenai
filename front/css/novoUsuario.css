@@ -34,7 +34,7 @@ form select {
 }
 
 form input[type="submit"] {
-    background-color: #32b352;
+    background-color: #329bb3;
     color: #ffffff;
     padding: 10px 15px;
     border: none;
@@ -46,9 +46,9 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-    background-color: #28a745;
+    background-color: #329bb3;
 }
 
 form input[type="submit"]:active {
-    background-color: #24963d;
+    background-color: #329bb3;
 }
