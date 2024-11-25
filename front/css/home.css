@@ -14,7 +14,7 @@ body {
 /* Barra de navegação */
 .navbar {
     background-color: #329bb3; /* Cor de fundo da navbar */
-    padding: 10px 20px 10px 10px; /* Espaçamento interno */
+    padding: 10px 20px; /* Espaçamento interno */
     border-bottom: 1px solid #ddd; /* Linha abaixo da navbar */
     height: 80px;
 }
@@ -42,7 +42,8 @@ body {
 .navbar-nav {
     list-style-type: none; /* Remove os marcadores da lista */
     display: flex; /* Exibe os itens em linha */
- 
+    justify-content: space-between;
+    width: 50%;
 }
 
 /* Estilo dos itens de navegação */
@@ -79,9 +80,9 @@ body {
 #mensagem {
     padding: 10px;
     margin-top: 10px;
-    border: 1px solid green;
+    border: 1px solid #329bb3;
     background-color: #d4edda;
-    color: green;
+    color: #329bb3;
     border-radius: 5px;
     font-weight: bold;
     display: none;  /* Inicialmente escondido */
