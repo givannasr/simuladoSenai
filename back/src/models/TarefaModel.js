@@ -19,11 +19,22 @@ class Tarefa {
             throw error;
         } 
     }
-
+    SELECT  ;
     static async listarTarefas() {
         try {
             const conn = await connection();
-            const [rows] = await conn.query(`SELECT ID_TAREFA, DESCRICAO, EQUIPE, PRIORIDADE, STATUS FROM Tarefa;`);
+            const [rows] = await conn.query(`SELECT 
+                                                T.id_tarefa,
+                                                T.id_usuario,
+                                                T.descricao, 
+                                                T.equipe, 
+                                                T.prioridade,
+                                                T.data_cadastro,
+                                                T.status,
+                                                U.nome
+                                                FROM Tarefa as T
+                                                INNER JOIN usuario as U
+                                                ON T.id_usuario = U.id_usuario;`);
             return rows
         } catch (error) {
             throw error;
