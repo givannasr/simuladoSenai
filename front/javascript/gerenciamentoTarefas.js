@@ -67,9 +67,21 @@ $(document).ready(async function () {
 
     await buscarTarefas();
 
-    $(document).off('submit', '#btn-save-status');
-    $(document).on('submit', '#btn-save-status', async function (event) {
-        const taskId = $(this).data(id);
+    $(document).off('click', '.btn-delete');
+    $(document).on('click', '.btn-delete', async function (event) {
+        const taskId = $(this).data('id');
+
+        try {
+            await axios.delete(`${localStorage.getItem('ipApi')}deletaTarefa/${taskId}`)
+            await buscarTarefas();
+        } catch (error) {
+            console.log(error);
+        }
+    })
+
+    $(document).off('click', '.btn-save-status');
+    $(document).on('click', '.btn-save-status', async function (event) {
+        const taskId = $(this).data('id');
         const newStatus = $(`.status-dropdown[data-id='${taskId}']`).val();
 
         try {
@@ -79,12 +91,6 @@ $(document).ready(async function () {
             console.log(error);
         }
     })
-
-
-
-
-
-
 
 
     axios.get(`${localStorage.getItem('ipApi')}listarUsuarios`)

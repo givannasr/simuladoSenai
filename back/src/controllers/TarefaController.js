@@ -23,12 +23,23 @@ export const TarefaController = {
     },
 
     atualizarStatus: async (req, res) => {
-        try {
+        try {         
             const {id} = req.params;
             const {status} = req.body;
-            const newStatus = status.toUpperCase();
-            const tarefas = await Tarefa.atualizarStatus(id, newStatus);
+            const tarefas = await Tarefa.atualizarStatus(id, status);
             res.json({ tarefas });
+            
+        } catch (error) {
+            res.json({ message: error });
+        }
+    },
+
+    deletaTarefa: async (req, res) => {
+        try {         
+            const {id} = req.params;
+            const deletTarefas = await Tarefa.deletarTarefa(id);
+            res.json({ deletTarefas });
+            
         } catch (error) {
             res.json({ message: error });
         }
